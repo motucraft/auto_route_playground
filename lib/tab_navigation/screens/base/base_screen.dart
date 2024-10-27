@@ -8,7 +8,7 @@ class BaseScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AutoTabsRouter.builder(
-      builder: (context, children, tabsRouter) {
+      builder: (_, children, tabsRouter) {
         return Scaffold(
           // NOTE: When the Home tab (index 0) is active, show only the Home widget.
           //   This prevents other tabs from being kept in the IndexedStack, which effectively resets them.
