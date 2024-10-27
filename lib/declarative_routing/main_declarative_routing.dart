@@ -1,9 +1,8 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:auto_route_playground/declarative_routing/main_declarative_routing.gr.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
-
-import 'main_declarative_routing.gr.dart';
 
 part 'main_declarative_routing.g.dart';
 
@@ -25,7 +24,7 @@ class MyApp extends ConsumerWidget {
   }
 }
 
-@AutoRouterConfig()
+@AutoRouterConfig(generateForDir: ['lib/declarative_routing'])
 class AppRouter extends RootStackRouter {
   @override
   List<AutoRoute> get routes {
@@ -49,7 +48,6 @@ class AppRouter extends RootStackRouter {
             isScrollControlled: true,
             constraints: BoxConstraints(
               maxHeight: MediaQuery.sizeOf(context).height / 2,
-              // minWidth: double.infinity,
             ),
             useSafeArea: true,
             showDragHandle: true,
