@@ -63,11 +63,11 @@ class AppRouter extends RootStackRouter {
 }
 
 @RoutePage()
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends ConsumerWidget {
   const HomeScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       appBar: AppBar(title: Text('Home')),
       body: SafeArea(
@@ -76,12 +76,16 @@ class HomeScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               ElevatedButton(
-                onPressed: () => context.router.push(SampleDialogRoute()),
+                // Routing without BuildContext
+                onPressed: () =>
+                    ref.read(routerProvider).push(SampleDialogRoute()),
                 child: Text('open dialog'),
               ),
               const SizedBox(height: 24),
               ElevatedButton(
-                onPressed: () => context.router.push(SampleBottomSheetRoute()),
+                // Routing without BuildContext
+                onPressed: () =>
+                    ref.read(routerProvider).push(SampleBottomSheetRoute()),
                 child: Text('open bottom-sheet'),
               ),
             ],
