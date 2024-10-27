@@ -59,6 +59,25 @@ class FavoritesRoute extends _i6.PageRouteInfo<void> {
 }
 
 /// generated route for
+/// [_i2.FavoritesSubScreen]
+class FavoritesSubRoute extends _i6.PageRouteInfo<void> {
+  const FavoritesSubRoute({List<_i6.PageRouteInfo>? children})
+      : super(
+          FavoritesSubRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'FavoritesSubRoute';
+
+  static _i6.PageInfo page = _i6.PageInfo(
+    name,
+    builder: (data) {
+      return const _i2.FavoritesSubScreen();
+    },
+  );
+}
+
+/// generated route for
 /// [_i1.GlobalSampleBottomSheetScreen]
 class GlobalSampleBottomSheetRoute extends _i6.PageRouteInfo<void> {
   const GlobalSampleBottomSheetRoute({List<_i6.PageRouteInfo>? children})
@@ -135,6 +154,25 @@ class MyPageRoute extends _i6.PageRouteInfo<void> {
 }
 
 /// generated route for
+/// [_i4.MyPageSubScreen]
+class MyPageSubRoute extends _i6.PageRouteInfo<void> {
+  const MyPageSubRoute({List<_i6.PageRouteInfo>? children})
+      : super(
+          MyPageSubRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'MyPageSubRoute';
+
+  static _i6.PageInfo page = _i6.PageInfo(
+    name,
+    builder: (data) {
+      return const _i4.MyPageSubScreen();
+    },
+  );
+}
+
+/// generated route for
 /// [_i5.PostsScreen]
 class PostsRoute extends _i6.PageRouteInfo<void> {
   const PostsRoute({List<_i6.PageRouteInfo>? children})
@@ -149,6 +187,25 @@ class PostsRoute extends _i6.PageRouteInfo<void> {
     name,
     builder: (data) {
       return const _i5.PostsScreen();
+    },
+  );
+}
+
+/// generated route for
+/// [_i5.PostsSubScreen]
+class PostsSubRoute extends _i6.PageRouteInfo<void> {
+  const PostsSubRoute({List<_i6.PageRouteInfo>? children})
+      : super(
+          PostsSubRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'PostsSubRoute';
+
+  static _i6.PageInfo page = _i6.PageInfo(
+    name,
+    builder: (data) {
+      return const _i5.PostsSubScreen();
     },
   );
 }

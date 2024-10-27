@@ -92,6 +92,9 @@ class AppRouter extends RootStackRouter {
                 initial: true,
                 page: FavoritesRoute.page,
               ),
+              AutoRoute(
+                page: FavoritesSubRoute.page,
+              ),
             ],
           ),
           AutoRoute(
@@ -101,6 +104,9 @@ class AppRouter extends RootStackRouter {
                 initial: true,
                 page: PostsRoute.page,
               ),
+              AutoRoute(
+                page: PostsSubRoute.page,
+              ),
             ],
           ),
           AutoRoute(
@@ -109,6 +115,12 @@ class AppRouter extends RootStackRouter {
               AutoRoute(
                 initial: true,
                 page: MyPageRoute.page,
+              ),
+              AutoRoute(
+                page: MyPageSubRoute.page,
+                meta: {
+                  'hideBottomNav': true,
+                },
               ),
             ],
           ),

@@ -7,17 +7,25 @@ class BaseScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AutoTabsRouter(
-      builder: (context, child) {
+    return AutoTabsRouter.builder(
+      builder: (context, children, tabsRouter) {
         return Scaffold(
-          body: child,
-          bottomNavigationBar: buildBottomNav(context, context.tabsRouter),
+          // NOTE: When the Home tab (index 0) is active, show only the Home widget.
+          //   This prevents other tabs from being kept in the IndexedStack, which effectively resets them.
+          //   For other tabs, use IndexedStack to preserve their states.
+          body: tabsRouter.activeIndex == 0
+              ? children[tabsRouter.activeIndex]
+              : IndexedStack(
+                  index: tabsRouter.activeIndex,
+                  children: children,
+                ),
+          bottomNavigationBar: buildBottomNav(tabsRouter),
         );
       },
     );
   }
 
-  Widget buildBottomNav(BuildContext context, TabsRouter tabsRouter) {
+  Widget buildBottomNav(TabsRouter tabsRouter) {
     final hideBottomNav = tabsRouter.topMatch.meta['hideBottomNav'] == true;
     return hideBottomNav
         ? SizedBox.shrink()
