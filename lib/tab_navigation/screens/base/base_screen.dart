@@ -32,7 +32,16 @@ class BaseScreen extends StatelessWidget {
         : BottomNavigationBar(
             type: BottomNavigationBarType.fixed,
             currentIndex: tabsRouter.activeIndex,
-            onTap: tabsRouter.setActiveIndex,
+            onTap: (index) {
+              if (tabsRouter.activeIndex == index) {
+                // If the current tab is tapped again, pop to the root of that tab's stack
+                tabsRouter
+                    .innerRouterOf<StackRouter>(tabsRouter.current.name)
+                    ?.popUntilRoot();
+              } else {
+                tabsRouter.setActiveIndex(index);
+              }
+            },
             items: [
               BottomNavigationBarItem(
                 icon: Icon(Icons.home),
