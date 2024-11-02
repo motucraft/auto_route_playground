@@ -3,6 +3,16 @@ import 'package:auto_route_playground/tab_navigation/router/router.gr.dart';
 import 'package:flutter/material.dart';
 
 @RoutePage()
+class MyPageShellScreen extends StatelessWidget {
+  const MyPageShellScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return AutoRouter();
+  }
+}
+
+@RoutePage()
 class MyPageScreen extends StatelessWidget {
   const MyPageScreen({super.key});
 

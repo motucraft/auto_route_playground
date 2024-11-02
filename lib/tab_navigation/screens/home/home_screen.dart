@@ -2,14 +2,23 @@ import 'package:auto_route/auto_route.dart';
 import 'package:auto_route_playground/tab_navigation/router/router.dart';
 import 'package:auto_route_playground/tab_navigation/router/router.gr.dart';
 import 'package:flutter/material.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 @RoutePage()
-class HomeScreen extends ConsumerWidget {
+class HomeShellScreen extends StatelessWidget {
+  const HomeShellScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return AutoRouter();
+  }
+}
+
+@RoutePage()
+class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text('HomeScreen')),
       body: Center(
@@ -17,26 +26,22 @@ class HomeScreen extends ConsumerWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             ElevatedButton(
-              onPressed: () =>
-                  ref.read(routerProvider).push(SampleDialogRoute()),
+              onPressed: () => router.push(SampleDialogRoute()),
               child: Text('open dialog'),
             ),
             const SizedBox(height: 24),
             ElevatedButton(
-              onPressed: () =>
-                  ref.read(routerProvider).push(SampleBottomSheetRoute()),
+              onPressed: () => router.push(SampleBottomSheetRoute()),
               child: Text('open bottom-sheet'),
             ),
             const SizedBox(height: 48),
             ElevatedButton(
-              onPressed: () =>
-                  ref.read(routerProvider).push(GlobalSampleDialogRoute()),
+              onPressed: () => router.push(GlobalSampleDialogRoute()),
               child: Text('open global dialog'),
             ),
             const SizedBox(height: 24),
             ElevatedButton(
-              onPressed: () =>
-                  ref.read(routerProvider).push(GlobalSampleBottomSheetRoute()),
+              onPressed: () => router.push(GlobalSampleBottomSheetRoute()),
               child: Text('open global bottom-sheet'),
             ),
           ],

@@ -3,6 +3,16 @@ import 'package:auto_route_playground/tab_navigation/router/router.gr.dart';
 import 'package:flutter/material.dart';
 
 @RoutePage()
+class PostsShellScreen extends StatelessWidget {
+  const PostsShellScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return AutoRouter();
+  }
+}
+
+@RoutePage()
 class PostsScreen extends StatelessWidget {
   const PostsScreen({super.key});
 
@@ -45,7 +55,28 @@ class PostsSubScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text('PostsSubScreen')),
-      body: Center(child: Text('PostsSubScreen')),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ElevatedButton(
+              onPressed: () => context.router.navigate(FavoritesShellRoute()),
+              child: Text('To Favorites'),
+            ),
+            const SizedBox(height: 24),
+            ElevatedButton(
+              onPressed: () {
+                context.router.navigate(
+                  FavoritesShellRoute(
+                    children: [FavoritesSubRoute()],
+                  ),
+                );
+              },
+              child: Text('To Favorites Subpage'),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

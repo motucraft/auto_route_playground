@@ -1,20 +1,18 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:auto_route_playground/declarative_routing/main_declarative_routing.gr.dart';
 import 'package:flutter/material.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-part 'main_declarative_routing.g.dart';
+final router = AppRouter();
 
-void main() => runApp(ProviderScope(child: const MyApp()));
+void main() => runApp(const MyApp());
 
-class MyApp extends ConsumerWidget {
+class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  Widget build(BuildContext context) {
     return MaterialApp.router(
-      routerConfig: ref.watch(routerProvider).config(),
+      routerConfig: router.config(),
       theme: ThemeData(
         bottomSheetTheme: const BottomSheetThemeData(
           surfaceTintColor: Colors.transparent,
@@ -61,11 +59,11 @@ class AppRouter extends RootStackRouter {
 }
 
 @RoutePage()
-class HomeScreen extends ConsumerWidget {
+class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text('Home')),
       body: SafeArea(
@@ -75,15 +73,13 @@ class HomeScreen extends ConsumerWidget {
             children: [
               ElevatedButton(
                 // Routing without BuildContext
-                onPressed: () =>
-                    ref.read(routerProvider).push(SampleDialogRoute()),
+                onPressed: () => router.push(SampleDialogRoute()),
                 child: Text('open dialog'),
               ),
               const SizedBox(height: 24),
               ElevatedButton(
                 // Routing without BuildContext
-                onPressed: () =>
-                    ref.read(routerProvider).push(SampleBottomSheetRoute()),
+                onPressed: () => router.push(SampleBottomSheetRoute()),
                 child: Text('open bottom-sheet'),
               ),
             ],
@@ -137,6 +133,3 @@ class SampleBottomSheetPage extends StatelessWidget {
     );
   }
 }
-
-@riverpod
-AppRouter router(Ref ref) => AppRouter();

@@ -59,6 +59,25 @@ class FavoritesRoute extends _i6.PageRouteInfo<void> {
 }
 
 /// generated route for
+/// [_i2.FavoritesShellScreen]
+class FavoritesShellRoute extends _i6.PageRouteInfo<void> {
+  const FavoritesShellRoute({List<_i6.PageRouteInfo>? children})
+      : super(
+          FavoritesShellRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'FavoritesShellRoute';
+
+  static _i6.PageInfo page = _i6.PageInfo(
+    name,
+    builder: (data) {
+      return const _i2.FavoritesShellScreen();
+    },
+  );
+}
+
+/// generated route for
 /// [_i2.FavoritesSubScreen]
 class FavoritesSubRoute extends _i6.PageRouteInfo<void> {
   const FavoritesSubRoute({List<_i6.PageRouteInfo>? children})
@@ -135,6 +154,25 @@ class HomeRoute extends _i6.PageRouteInfo<void> {
 }
 
 /// generated route for
+/// [_i3.HomeShellScreen]
+class HomeShellRoute extends _i6.PageRouteInfo<void> {
+  const HomeShellRoute({List<_i6.PageRouteInfo>? children})
+      : super(
+          HomeShellRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'HomeShellRoute';
+
+  static _i6.PageInfo page = _i6.PageInfo(
+    name,
+    builder: (data) {
+      return const _i3.HomeShellScreen();
+    },
+  );
+}
+
+/// generated route for
 /// [_i4.MyPageScreen]
 class MyPageRoute extends _i6.PageRouteInfo<void> {
   const MyPageRoute({List<_i6.PageRouteInfo>? children})
@@ -149,6 +187,25 @@ class MyPageRoute extends _i6.PageRouteInfo<void> {
     name,
     builder: (data) {
       return const _i4.MyPageScreen();
+    },
+  );
+}
+
+/// generated route for
+/// [_i4.MyPageShellScreen]
+class MyPageShellRoute extends _i6.PageRouteInfo<void> {
+  const MyPageShellRoute({List<_i6.PageRouteInfo>? children})
+      : super(
+          MyPageShellRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'MyPageShellRoute';
+
+  static _i6.PageInfo page = _i6.PageInfo(
+    name,
+    builder: (data) {
+      return const _i4.MyPageShellScreen();
     },
   );
 }
@@ -187,6 +244,25 @@ class PostsRoute extends _i6.PageRouteInfo<void> {
     name,
     builder: (data) {
       return const _i5.PostsScreen();
+    },
+  );
+}
+
+/// generated route for
+/// [_i5.PostsShellScreen]
+class PostsShellRoute extends _i6.PageRouteInfo<void> {
+  const PostsShellRoute({List<_i6.PageRouteInfo>? children})
+      : super(
+          PostsShellRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'PostsShellRoute';
+
+  static _i6.PageInfo page = _i6.PageInfo(
+    name,
+    builder: (data) {
+      return const _i5.PostsShellScreen();
     },
   );
 }
