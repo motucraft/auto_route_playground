@@ -45,10 +45,70 @@ class MyPageSubScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text('MyPageSubScreen')),
+      body: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              ElevatedButton(
+                onPressed: () => context.router.push(WithBottomNavRoute()),
+                child: Text('Go to Page with Bottom Navigation'),
+              ),
+              const SizedBox(height: 24),
+              ElevatedButton(
+                onPressed: () => context.router.push(WithoutBottomNavRoute()),
+                child: Text('Go to Page without Bottom Navigation'),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+@RoutePage()
+class WithBottomNavScreen extends StatelessWidget {
+  const WithBottomNavScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('WithBottomNavScreen')),
       body: Center(
-        child: Text(
-          'Without BottomNavigationBar',
-          style: TextStyle(color: Colors.red),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text('With Bottom Navigation', style: TextStyle(fontSize: 24)),
+            const SizedBox(height: 24),
+            ElevatedButton(onPressed: context.maybePop, child: Text('Back')),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+@RoutePage()
+class WithoutBottomNavScreen extends StatelessWidget {
+  const WithoutBottomNavScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('WithoutBottomNavScreen')),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              'Without Bottom Navigation',
+              style: TextStyle(color: Colors.red, fontSize: 24),
+            ),
+            const SizedBox(height: 24),
+            ElevatedButton(onPressed: context.maybePop, child: Text('Back')),
+          ],
         ),
       ),
     );

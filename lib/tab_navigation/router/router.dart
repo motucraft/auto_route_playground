@@ -118,9 +118,13 @@ class AppRouter extends RootStackRouter {
               ),
               AutoRoute(
                 page: MyPageSubRoute.page,
-                meta: {
-                  'hideBottomNav': true,
-                },
+              ),
+              AutoRoute(
+                page: WithBottomNavRoute.page,
+              ),
+              AutoRoute(
+                page: WithoutBottomNavRoute.page,
+                meta: {'hideBottomNav': true},
               ),
             ],
           ),

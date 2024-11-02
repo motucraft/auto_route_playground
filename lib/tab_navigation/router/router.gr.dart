@@ -247,3 +247,41 @@ class SampleDialogRoute extends _i6.PageRouteInfo<void> {
     },
   );
 }
+
+/// generated route for
+/// [_i4.WithBottomNavScreen]
+class WithBottomNavRoute extends _i6.PageRouteInfo<void> {
+  const WithBottomNavRoute({List<_i6.PageRouteInfo>? children})
+      : super(
+          WithBottomNavRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'WithBottomNavRoute';
+
+  static _i6.PageInfo page = _i6.PageInfo(
+    name,
+    builder: (data) {
+      return const _i4.WithBottomNavScreen();
+    },
+  );
+}
+
+/// generated route for
+/// [_i4.WithoutBottomNavScreen]
+class WithoutBottomNavRoute extends _i6.PageRouteInfo<void> {
+  const WithoutBottomNavRoute({List<_i6.PageRouteInfo>? children})
+      : super(
+          WithoutBottomNavRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'WithoutBottomNavRoute';
+
+  static _i6.PageInfo page = _i6.PageInfo(
+    name,
+    builder: (data) {
+      return const _i4.WithoutBottomNavScreen();
+    },
+  );
+}
