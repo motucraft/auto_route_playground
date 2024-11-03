@@ -20,13 +20,13 @@ class BaseScreen extends StatelessWidget {
                   index: tabsRouter.activeIndex,
                   children: children,
                 ),
-          bottomNavigationBar: buildBottomNav(tabsRouter),
+          bottomNavigationBar: _buildBottomNav(tabsRouter),
         );
       },
     );
   }
 
-  Widget buildBottomNav(TabsRouter tabsRouter) {
+  Widget _buildBottomNav(TabsRouter tabsRouter) {
     final hideBottomNav = tabsRouter.topMatch.meta[hideBottomNavKey] == true;
     return hideBottomNav
         ? SizedBox()
