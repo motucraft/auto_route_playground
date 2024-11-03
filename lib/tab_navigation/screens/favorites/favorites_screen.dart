@@ -18,7 +18,7 @@ class FavoritesScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('FavoriteScreen'),
+        title: Text('FavoritesScreen'),
         actions: [
           ElevatedButton(
             onPressed: () => context.router.push(FavoritesSubRoute()),

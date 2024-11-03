@@ -50,7 +50,7 @@ class BaseScreen extends StatelessWidget {
               ),
               BottomNavigationBarItem(
                 icon: Icon(Icons.favorite),
-                label: 'Favorite',
+                label: 'Favorites',
               ),
               BottomNavigationBarItem(
                 icon: Icon(Icons.post_add),
