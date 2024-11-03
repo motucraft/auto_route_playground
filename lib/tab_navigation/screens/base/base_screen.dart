@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:auto_route_playground/tab_navigation/router/router.dart';
 import 'package:flutter/material.dart';
 
 @RoutePage()
@@ -26,9 +27,9 @@ class BaseScreen extends StatelessWidget {
   }
 
   Widget buildBottomNav(TabsRouter tabsRouter) {
-    final hideBottomNav = tabsRouter.topMatch.meta['hideBottomNav'] == true;
+    final hideBottomNav = tabsRouter.topMatch.meta[hideBottomNavKey] == true;
     return hideBottomNav
-        ? SizedBox.shrink()
+        ? SizedBox()
         : BottomNavigationBar(
             type: BottomNavigationBarType.fixed,
             currentIndex: tabsRouter.activeIndex,
@@ -61,49 +62,5 @@ class BaseScreen extends StatelessWidget {
               ),
             ],
           );
-  }
-}
-
-@RoutePage()
-class GlobalSampleDialogScreen extends StatelessWidget {
-  const GlobalSampleDialogScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return AlertDialog(
-      content: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          const Text('Global dialog with auto_route'),
-          const SizedBox(height: 12),
-          ElevatedButton(
-            onPressed: () => context.maybePop(),
-            child: Text('close'),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-@RoutePage()
-class GlobalSampleBottomSheetScreen extends StatelessWidget {
-  const GlobalSampleBottomSheetScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          const Text('Global bottom sheet with auto_route'),
-          const SizedBox(height: 12),
-          ElevatedButton(
-            onPressed: () => context.maybePop(),
-            child: Text('close'),
-          ),
-        ],
-      ),
-    );
   }
 }

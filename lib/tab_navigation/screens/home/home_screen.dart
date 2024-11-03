@@ -8,9 +8,7 @@ class HomeShellScreen extends StatelessWidget {
   const HomeShellScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return AutoRouter();
-  }
+  Widget build(context) => AutoRouter();
 }
 
 @RoutePage()
@@ -46,50 +44,6 @@ class HomeScreen extends StatelessWidget {
             ),
           ],
         ),
-      ),
-    );
-  }
-}
-
-@RoutePage()
-class SampleDialogScreen extends StatelessWidget {
-  const SampleDialogScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return AlertDialog(
-      content: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          const Text('dialog with auto_route'),
-          const SizedBox(height: 12),
-          ElevatedButton(
-            onPressed: () => context.maybePop(),
-            child: Text('close'),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-@RoutePage()
-class SampleBottomSheetScreen extends StatelessWidget {
-  const SampleBottomSheetScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          const Text('bottom sheet with auto_route'),
-          const SizedBox(height: 12),
-          ElevatedButton(
-            onPressed: () => context.maybePop(),
-            child: Text('close'),
-          ),
-        ],
       ),
     );
   }

@@ -7,9 +7,7 @@ class MyPageShellScreen extends StatelessWidget {
   const MyPageShellScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return AutoRouter();
-  }
+  Widget build(context) => AutoRouter();
 }
 
 @RoutePage()

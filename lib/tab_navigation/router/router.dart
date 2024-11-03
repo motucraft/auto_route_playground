@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:auto_route_playground/tab_navigation/router/router.gr.dart';
 import 'package:flutter/material.dart';
 
+const hideBottomNavKey = 'hideBottomNav';
 final router = AppRouter();
 
 @AutoRouterConfig(
@@ -23,32 +24,8 @@ class AppRouter extends RootStackRouter {
               initial: true,
               page: HomeRoute.page,
             ),
-            CustomRoute(
-              page: SampleDialogRoute.page,
-              customRouteBuilder: <T>(context, child, page) {
-                return DialogRoute(
-                  context: context,
-                  settings: page,
-                  builder: (_) => child,
-                );
-              },
-            ),
-            CustomRoute(
-              page: SampleBottomSheetRoute.page,
-              customRouteBuilder: <T>(context, child, page) {
-                return ModalBottomSheetRoute(
-                  settings: page,
-                  isScrollControlled: true,
-                  constraints: BoxConstraints(
-                    maxHeight: MediaQuery.sizeOf(context).height / 2,
-                  ),
-                  useSafeArea: true,
-                  showDragHandle: true,
-                  elevation: 1.0,
-                  builder: (context) => child,
-                );
-              },
-            ),
+            _dialogCustomRoute(SampleDialogRoute.page),
+            _bottomSheetCustomRoute(SampleBottomSheetRoute.page),
           ],
         ),
         AutoRoute(
@@ -90,63 +67,47 @@ class AppRouter extends RootStackRouter {
             ),
             AutoRoute(
               page: WithoutBottomNavRoute.page,
-              meta: {'hideBottomNav': true},
+              meta: {hideBottomNavKey: true},
             ),
-            CustomRoute(
-              page: SampleDialogRoute.page,
-              customRouteBuilder: <T>(context, child, page) {
-                return DialogRoute(
-                  context: context,
-                  settings: page,
-                  builder: (_) => child,
-                );
-              },
-            ),
-            CustomRoute(
-              page: SampleBottomSheetRoute.page,
-              customRouteBuilder: <T>(context, child, page) {
-                return ModalBottomSheetRoute(
-                  settings: page,
-                  isScrollControlled: true,
-                  constraints: BoxConstraints(
-                    maxHeight: MediaQuery.sizeOf(context).height / 2,
-                  ),
-                  useSafeArea: true,
-                  showDragHandle: true,
-                  elevation: 1.0,
-                  builder: (context) => child,
-                );
-              },
-            ),
+            _dialogCustomRoute(SampleDialogRoute.page),
+            _bottomSheetCustomRoute(SampleBottomSheetRoute.page),
           ],
         ),
       ],
     ),
-    CustomRoute(
-      page: GlobalSampleDialogRoute.page,
-      customRouteBuilder: <T>(context, child, page) {
-        return DialogRoute(
-          context: context,
-          settings: page,
-          builder: (_) => child,
-        );
-      },
-    ),
-    CustomRoute(
-      page: GlobalSampleBottomSheetRoute.page,
-      customRouteBuilder: <T>(context, child, page) {
-        return ModalBottomSheetRoute(
-          settings: page,
-          isScrollControlled: true,
-          constraints: BoxConstraints(
-            maxHeight: MediaQuery.sizeOf(context).height / 2,
-          ),
-          useSafeArea: true,
-          showDragHandle: true,
-          elevation: 1.0,
-          builder: (context) => child,
-        );
-      },
-    ),
+    _dialogCustomRoute(GlobalSampleDialogRoute.page),
+    _bottomSheetCustomRoute(GlobalSampleBottomSheetRoute.page),
   ];
+}
+
+AutoRoute _dialogCustomRoute(PageInfo page) {
+  return CustomRoute(
+    page: page,
+    customRouteBuilder: <T>(context, child, page) {
+      return DialogRoute(
+        context: context,
+        settings: page,
+        builder: (_) => child,
+      );
+    },
+  );
+}
+
+AutoRoute _bottomSheetCustomRoute(PageInfo page) {
+  return CustomRoute(
+    page: page,
+    customRouteBuilder: <T>(context, child, page) {
+      return ModalBottomSheetRoute(
+        settings: page,
+        isScrollControlled: true,
+        constraints: BoxConstraints(
+          maxHeight: MediaQuery.sizeOf(context).height / 2,
+        ),
+        useSafeArea: true,
+        showDragHandle: true,
+        elevation: 1.0,
+        builder: (context) => child,
+      );
+    },
+  );
 }

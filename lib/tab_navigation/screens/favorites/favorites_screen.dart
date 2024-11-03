@@ -7,9 +7,7 @@ class FavoritesShellScreen extends StatelessWidget {
   const FavoritesShellScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return AutoRouter();
-  }
+  Widget build(context) => AutoRouter();
 }
 
 @RoutePage()
