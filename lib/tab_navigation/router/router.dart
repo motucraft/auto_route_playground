@@ -76,7 +76,6 @@ class AppRouter extends RootStackRouter {
           ],
         ),
         AutoRoute(
-          // page: myPageShellRoute.page,
           page: MyPageShellRoute.page,
           children: [
             AutoRoute(
@@ -92,6 +91,32 @@ class AppRouter extends RootStackRouter {
             AutoRoute(
               page: WithoutBottomNavRoute.page,
               meta: {'hideBottomNav': true},
+            ),
+            CustomRoute(
+              page: SampleDialogRoute.page,
+              customRouteBuilder: <T>(context, child, page) {
+                return DialogRoute(
+                  context: context,
+                  settings: page,
+                  builder: (_) => child,
+                );
+              },
+            ),
+            CustomRoute(
+              page: SampleBottomSheetRoute.page,
+              customRouteBuilder: <T>(context, child, page) {
+                return ModalBottomSheetRoute(
+                  settings: page,
+                  isScrollControlled: true,
+                  constraints: BoxConstraints(
+                    maxHeight: MediaQuery.sizeOf(context).height / 2,
+                  ),
+                  useSafeArea: true,
+                  showDragHandle: true,
+                  elevation: 1.0,
+                  builder: (context) => child,
+                );
+              },
             ),
           ],
         ),

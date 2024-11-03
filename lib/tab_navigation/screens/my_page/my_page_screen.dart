@@ -92,6 +92,16 @@ class WithBottomNavScreen extends StatelessWidget {
           children: [
             Text('With Bottom Navigation', style: TextStyle(fontSize: 24)),
             const SizedBox(height: 24),
+            ElevatedButton(
+              onPressed: () => context.router.push(SampleDialogRoute()),
+              child: Text('dialogs in tab'),
+            ),
+            const SizedBox(height: 24),
+            ElevatedButton(
+              onPressed: () => context.router.push(SampleBottomSheetRoute()),
+              child: Text('dialogs in bottom sheet'),
+            ),
+            const SizedBox(height: 24),
             ElevatedButton(onPressed: context.maybePop, child: Text('Back')),
           ],
         ),
