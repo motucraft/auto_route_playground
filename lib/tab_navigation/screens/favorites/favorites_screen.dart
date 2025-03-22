@@ -27,19 +27,15 @@ class FavoritesScreen extends StatelessWidget {
         ],
       ),
       body: ListView(
-        children: List.generate(
-          30,
-          (index) {
-            return Container(
-              height: 50,
-              color:
-                  index % 2 == 0 ? Colors.white : Colors.red.withOpacity(0.5),
-              child: Center(
-                child: Text(index.toString(), style: TextStyle(fontSize: 24)),
-              ),
-            );
-          },
-        ),
+        children: List.generate(30, (index) {
+          return Container(
+            height: 50,
+            color: index % 2 == 0 ? Colors.white : Colors.red.withOpacity(0.5),
+            child: Center(
+              child: Text(index.toString(), style: TextStyle(fontSize: 24)),
+            ),
+          );
+        }),
       ),
     );
   }
@@ -65,9 +61,7 @@ class FavoritesSubScreen extends StatelessWidget {
             ElevatedButton(
               onPressed: () {
                 context.router.navigate(
-                  PostsShellRoute(
-                    children: [PostsSubRoute()],
-                  ),
+                  PostsShellRoute(children: [PostsSubRoute()]),
                 );
               },
               child: Text('To Posts Subpage'),

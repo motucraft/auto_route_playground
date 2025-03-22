@@ -20,10 +20,7 @@ class AppRouter extends RootStackRouter {
           page: HomeShellRoute.page,
           initial: true,
           children: [
-            AutoRoute(
-              initial: true,
-              page: HomeRoute.page,
-            ),
+            AutoRoute(initial: true, page: HomeRoute.page),
             _dialogCustomRoute(SampleDialogRoute.page),
             _bottomSheetCustomRoute(SampleBottomSheetRoute.page),
           ],
@@ -31,40 +28,23 @@ class AppRouter extends RootStackRouter {
         AutoRoute(
           page: FavoritesShellRoute.page,
           children: [
-            AutoRoute(
-              initial: true,
-              page: FavoritesRoute.page,
-            ),
-            AutoRoute(
-              page: FavoritesSubRoute.page,
-            ),
+            AutoRoute(initial: true, page: FavoritesRoute.page),
+            AutoRoute(page: FavoritesSubRoute.page),
           ],
         ),
         AutoRoute(
           page: PostsShellRoute.page,
           children: [
-            AutoRoute(
-              initial: true,
-              page: PostsRoute.page,
-            ),
-            AutoRoute(
-              page: PostsSubRoute.page,
-            ),
+            AutoRoute(initial: true, page: PostsRoute.page),
+            AutoRoute(page: PostsSubRoute.page),
           ],
         ),
         AutoRoute(
           page: MyPageShellRoute.page,
           children: [
-            AutoRoute(
-              initial: true,
-              page: MyPageRoute.page,
-            ),
-            AutoRoute(
-              page: MyPageSubRoute.page,
-            ),
-            AutoRoute(
-              page: WithBottomNavRoute.page,
-            ),
+            AutoRoute(initial: true, page: MyPageRoute.page),
+            AutoRoute(page: MyPageSubRoute.page),
+            AutoRoute(page: WithBottomNavRoute.page),
             AutoRoute(
               page: WithoutBottomNavRoute.page,
               meta: {hideBottomNavKey: true},

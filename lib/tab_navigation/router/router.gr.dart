@@ -1,3 +1,4 @@
+// dart format width=80
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 // **************************************************************************
@@ -28,10 +29,7 @@ import 'package:auto_route_playground/tab_navigation/screens/posts/posts_screen.
 /// [_i1.BaseScreen]
 class BaseRoute extends _i8.PageRouteInfo<void> {
   const BaseRoute({List<_i8.PageRouteInfo>? children})
-      : super(
-          BaseRoute.name,
-          initialChildren: children,
-        );
+    : super(BaseRoute.name, initialChildren: children);
 
   static const String name = 'BaseRoute';
 
@@ -47,10 +45,7 @@ class BaseRoute extends _i8.PageRouteInfo<void> {
 /// [_i2.FavoritesScreen]
 class FavoritesRoute extends _i8.PageRouteInfo<void> {
   const FavoritesRoute({List<_i8.PageRouteInfo>? children})
-      : super(
-          FavoritesRoute.name,
-          initialChildren: children,
-        );
+    : super(FavoritesRoute.name, initialChildren: children);
 
   static const String name = 'FavoritesRoute';
 
@@ -66,10 +61,7 @@ class FavoritesRoute extends _i8.PageRouteInfo<void> {
 /// [_i2.FavoritesShellScreen]
 class FavoritesShellRoute extends _i8.PageRouteInfo<void> {
   const FavoritesShellRoute({List<_i8.PageRouteInfo>? children})
-      : super(
-          FavoritesShellRoute.name,
-          initialChildren: children,
-        );
+    : super(FavoritesShellRoute.name, initialChildren: children);
 
   static const String name = 'FavoritesShellRoute';
 
@@ -85,10 +77,7 @@ class FavoritesShellRoute extends _i8.PageRouteInfo<void> {
 /// [_i2.FavoritesSubScreen]
 class FavoritesSubRoute extends _i8.PageRouteInfo<void> {
   const FavoritesSubRoute({List<_i8.PageRouteInfo>? children})
-      : super(
-          FavoritesSubRoute.name,
-          initialChildren: children,
-        );
+    : super(FavoritesSubRoute.name, initialChildren: children);
 
   static const String name = 'FavoritesSubRoute';
 
@@ -104,10 +93,7 @@ class FavoritesSubRoute extends _i8.PageRouteInfo<void> {
 /// [_i3.GlobalSampleBottomSheetScreen]
 class GlobalSampleBottomSheetRoute extends _i8.PageRouteInfo<void> {
   const GlobalSampleBottomSheetRoute({List<_i8.PageRouteInfo>? children})
-      : super(
-          GlobalSampleBottomSheetRoute.name,
-          initialChildren: children,
-        );
+    : super(GlobalSampleBottomSheetRoute.name, initialChildren: children);
 
   static const String name = 'GlobalSampleBottomSheetRoute';
 
@@ -123,10 +109,7 @@ class GlobalSampleBottomSheetRoute extends _i8.PageRouteInfo<void> {
 /// [_i4.GlobalSampleDialogScreen]
 class GlobalSampleDialogRoute extends _i8.PageRouteInfo<void> {
   const GlobalSampleDialogRoute({List<_i8.PageRouteInfo>? children})
-      : super(
-          GlobalSampleDialogRoute.name,
-          initialChildren: children,
-        );
+    : super(GlobalSampleDialogRoute.name, initialChildren: children);
 
   static const String name = 'GlobalSampleDialogRoute';
 
@@ -142,10 +125,7 @@ class GlobalSampleDialogRoute extends _i8.PageRouteInfo<void> {
 /// [_i5.HomeScreen]
 class HomeRoute extends _i8.PageRouteInfo<void> {
   const HomeRoute({List<_i8.PageRouteInfo>? children})
-      : super(
-          HomeRoute.name,
-          initialChildren: children,
-        );
+    : super(HomeRoute.name, initialChildren: children);
 
   static const String name = 'HomeRoute';
 
@@ -161,10 +141,7 @@ class HomeRoute extends _i8.PageRouteInfo<void> {
 /// [_i5.HomeShellScreen]
 class HomeShellRoute extends _i8.PageRouteInfo<void> {
   const HomeShellRoute({List<_i8.PageRouteInfo>? children})
-      : super(
-          HomeShellRoute.name,
-          initialChildren: children,
-        );
+    : super(HomeShellRoute.name, initialChildren: children);
 
   static const String name = 'HomeShellRoute';
 
@@ -180,10 +157,7 @@ class HomeShellRoute extends _i8.PageRouteInfo<void> {
 /// [_i6.MyPageScreen]
 class MyPageRoute extends _i8.PageRouteInfo<void> {
   const MyPageRoute({List<_i8.PageRouteInfo>? children})
-      : super(
-          MyPageRoute.name,
-          initialChildren: children,
-        );
+    : super(MyPageRoute.name, initialChildren: children);
 
   static const String name = 'MyPageRoute';
 
@@ -199,10 +173,7 @@ class MyPageRoute extends _i8.PageRouteInfo<void> {
 /// [_i6.MyPageShellScreen]
 class MyPageShellRoute extends _i8.PageRouteInfo<void> {
   const MyPageShellRoute({List<_i8.PageRouteInfo>? children})
-      : super(
-          MyPageShellRoute.name,
-          initialChildren: children,
-        );
+    : super(MyPageShellRoute.name, initialChildren: children);
 
   static const String name = 'MyPageShellRoute';
 
@@ -218,10 +189,7 @@ class MyPageShellRoute extends _i8.PageRouteInfo<void> {
 /// [_i6.MyPageSubScreen]
 class MyPageSubRoute extends _i8.PageRouteInfo<void> {
   const MyPageSubRoute({List<_i8.PageRouteInfo>? children})
-      : super(
-          MyPageSubRoute.name,
-          initialChildren: children,
-        );
+    : super(MyPageSubRoute.name, initialChildren: children);
 
   static const String name = 'MyPageSubRoute';
 
@@ -237,10 +205,7 @@ class MyPageSubRoute extends _i8.PageRouteInfo<void> {
 /// [_i7.PostsScreen]
 class PostsRoute extends _i8.PageRouteInfo<void> {
   const PostsRoute({List<_i8.PageRouteInfo>? children})
-      : super(
-          PostsRoute.name,
-          initialChildren: children,
-        );
+    : super(PostsRoute.name, initialChildren: children);
 
   static const String name = 'PostsRoute';
 
@@ -256,10 +221,7 @@ class PostsRoute extends _i8.PageRouteInfo<void> {
 /// [_i7.PostsShellScreen]
 class PostsShellRoute extends _i8.PageRouteInfo<void> {
   const PostsShellRoute({List<_i8.PageRouteInfo>? children})
-      : super(
-          PostsShellRoute.name,
-          initialChildren: children,
-        );
+    : super(PostsShellRoute.name, initialChildren: children);
 
   static const String name = 'PostsShellRoute';
 
@@ -275,10 +237,7 @@ class PostsShellRoute extends _i8.PageRouteInfo<void> {
 /// [_i7.PostsSubScreen]
 class PostsSubRoute extends _i8.PageRouteInfo<void> {
   const PostsSubRoute({List<_i8.PageRouteInfo>? children})
-      : super(
-          PostsSubRoute.name,
-          initialChildren: children,
-        );
+    : super(PostsSubRoute.name, initialChildren: children);
 
   static const String name = 'PostsSubRoute';
 
@@ -294,10 +253,7 @@ class PostsSubRoute extends _i8.PageRouteInfo<void> {
 /// [_i3.SampleBottomSheetScreen]
 class SampleBottomSheetRoute extends _i8.PageRouteInfo<void> {
   const SampleBottomSheetRoute({List<_i8.PageRouteInfo>? children})
-      : super(
-          SampleBottomSheetRoute.name,
-          initialChildren: children,
-        );
+    : super(SampleBottomSheetRoute.name, initialChildren: children);
 
   static const String name = 'SampleBottomSheetRoute';
 
@@ -313,10 +269,7 @@ class SampleBottomSheetRoute extends _i8.PageRouteInfo<void> {
 /// [_i4.SampleDialogScreen]
 class SampleDialogRoute extends _i8.PageRouteInfo<void> {
   const SampleDialogRoute({List<_i8.PageRouteInfo>? children})
-      : super(
-          SampleDialogRoute.name,
-          initialChildren: children,
-        );
+    : super(SampleDialogRoute.name, initialChildren: children);
 
   static const String name = 'SampleDialogRoute';
 
@@ -332,10 +285,7 @@ class SampleDialogRoute extends _i8.PageRouteInfo<void> {
 /// [_i6.WithBottomNavScreen]
 class WithBottomNavRoute extends _i8.PageRouteInfo<void> {
   const WithBottomNavRoute({List<_i8.PageRouteInfo>? children})
-      : super(
-          WithBottomNavRoute.name,
-          initialChildren: children,
-        );
+    : super(WithBottomNavRoute.name, initialChildren: children);
 
   static const String name = 'WithBottomNavRoute';
 
@@ -351,10 +301,7 @@ class WithBottomNavRoute extends _i8.PageRouteInfo<void> {
 /// [_i6.WithoutBottomNavScreen]
 class WithoutBottomNavRoute extends _i8.PageRouteInfo<void> {
   const WithoutBottomNavRoute({List<_i8.PageRouteInfo>? children})
-      : super(
-          WithoutBottomNavRoute.name,
-          initialChildren: children,
-        );
+    : super(WithoutBottomNavRoute.name, initialChildren: children);
 
   static const String name = 'WithoutBottomNavRoute';
 

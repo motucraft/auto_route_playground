@@ -27,19 +27,16 @@ class MyPageScreen extends StatelessWidget {
         ],
       ),
       body: ListView(
-        children: List.generate(
-          30,
-          (index) {
-            return Container(
-              height: 50,
-              color:
-                  index % 2 == 0 ? Colors.white : Colors.green.withOpacity(0.5),
-              child: Center(
-                child: Text(index.toString(), style: TextStyle(fontSize: 24)),
-              ),
-            );
-          },
-        ),
+        children: List.generate(30, (index) {
+          return Container(
+            height: 50,
+            color:
+                index % 2 == 0 ? Colors.white : Colors.green.withOpacity(0.5),
+            child: Center(
+              child: Text(index.toString(), style: TextStyle(fontSize: 24)),
+            ),
+          );
+        }),
       ),
     );
   }

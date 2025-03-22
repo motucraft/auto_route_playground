@@ -1,3 +1,4 @@
+// dart format width=80
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 // **************************************************************************
@@ -16,10 +17,7 @@ import 'package:auto_route_playground/declarative_routing/main_declarative_routi
 /// [_i1.HomeScreen]
 class HomeRoute extends _i2.PageRouteInfo<void> {
   const HomeRoute({List<_i2.PageRouteInfo>? children})
-      : super(
-          HomeRoute.name,
-          initialChildren: children,
-        );
+    : super(HomeRoute.name, initialChildren: children);
 
   static const String name = 'HomeRoute';
 
@@ -35,10 +33,7 @@ class HomeRoute extends _i2.PageRouteInfo<void> {
 /// [_i1.SampleBottomSheetPage]
 class SampleBottomSheetRoute extends _i2.PageRouteInfo<void> {
   const SampleBottomSheetRoute({List<_i2.PageRouteInfo>? children})
-      : super(
-          SampleBottomSheetRoute.name,
-          initialChildren: children,
-        );
+    : super(SampleBottomSheetRoute.name, initialChildren: children);
 
   static const String name = 'SampleBottomSheetRoute';
 
@@ -54,10 +49,7 @@ class SampleBottomSheetRoute extends _i2.PageRouteInfo<void> {
 /// [_i1.SampleDialogPage]
 class SampleDialogRoute extends _i2.PageRouteInfo<void> {
   const SampleDialogRoute({List<_i2.PageRouteInfo>? children})
-      : super(
-          SampleDialogRoute.name,
-          initialChildren: children,
-        );
+    : super(SampleDialogRoute.name, initialChildren: children);
 
   static const String name = 'SampleDialogRoute';
 

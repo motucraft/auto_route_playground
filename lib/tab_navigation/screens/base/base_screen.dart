@@ -14,12 +14,13 @@ class BaseScreen extends StatelessWidget {
           // NOTE: When the Home tab (index 0) is active, show only the Home widget.
           //   This prevents other tabs from being kept in the IndexedStack, which effectively resets them.
           //   For other tabs, use IndexedStack to preserve their states.
-          body: tabsRouter.activeIndex == 0
-              ? children[tabsRouter.activeIndex]
-              : IndexedStack(
-                  index: tabsRouter.activeIndex,
-                  children: children,
-                ),
+          body:
+              tabsRouter.activeIndex == 0
+                  ? children[tabsRouter.activeIndex]
+                  : IndexedStack(
+                    index: tabsRouter.activeIndex,
+                    children: children,
+                  ),
           bottomNavigationBar: _buildBottomNav(tabsRouter),
         );
       },
@@ -31,36 +32,27 @@ class BaseScreen extends StatelessWidget {
     return hideBottomNav
         ? SizedBox()
         : BottomNavigationBar(
-            type: BottomNavigationBarType.fixed,
-            currentIndex: tabsRouter.activeIndex,
-            onTap: (index) {
-              if (tabsRouter.activeIndex == index) {
-                // If the current tab is tapped again, pop to the root of that tab's stack
-                tabsRouter
-                    .innerRouterOf<StackRouter>(tabsRouter.current.name)
-                    ?.popUntilRoot();
-              } else {
-                tabsRouter.setActiveIndex(index);
-              }
-            },
-            items: [
-              BottomNavigationBarItem(
-                icon: Icon(Icons.home),
-                label: 'Home',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.favorite),
-                label: 'Favorites',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.post_add),
-                label: 'Posts',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.person),
-                label: 'MyPage',
-              ),
-            ],
-          );
+          type: BottomNavigationBarType.fixed,
+          currentIndex: tabsRouter.activeIndex,
+          onTap: (index) {
+            if (tabsRouter.activeIndex == index) {
+              // If the current tab is tapped again, pop to the root of that tab's stack
+              tabsRouter
+                  .innerRouterOf<StackRouter>(tabsRouter.current.name)
+                  ?.popUntilRoot();
+            } else {
+              tabsRouter.setActiveIndex(index);
+            }
+          },
+          items: [
+            BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.favorite),
+              label: 'Favorites',
+            ),
+            BottomNavigationBarItem(icon: Icon(Icons.post_add), label: 'Posts'),
+            BottomNavigationBarItem(icon: Icon(Icons.person), label: 'MyPage'),
+          ],
+        );
   }
 }
