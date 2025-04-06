@@ -392,6 +392,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.0.0"
+  navigator_resizable:
+    dependency: transitive
+    description:
+      name: navigator_resizable
+      sha256: ec1abf6f4b804ad5d4dc1fab3c914d6290543ee7b8a34095168c8726dbe38312
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.2"
   package_config:
     dependency: transitive
     description:
@@ -461,6 +469,14 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  smooth_sheets:
+    dependency: "direct main"
+    description:
+      name: smooth_sheets
+      sha256: cbf7fb849feb28c03c373c3ad80ec475c4f0d325857e36599a2e8849961ce4ca
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.11.0"
   source_gen:
     dependency: transitive
     description:
@@ -607,4 +623,4 @@ packages:
     version: "3.1.2"
 sdks:
   dart: ">=3.7.0 <4.0.0"
-  flutter: ">=3.18.0-18.0.pre.54"
+  flutter: ">=3.27.0"
