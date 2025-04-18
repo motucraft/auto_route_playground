@@ -473,10 +473,10 @@ packages:
     dependency: "direct main"
     description:
       name: smooth_sheets
-      sha256: cbf7fb849feb28c03c373c3ad80ec475c4f0d325857e36599a2e8849961ce4ca
+      sha256: c2a987a06f085de22c9fc77ea6cf1a0724cbb1e54aa50f2cff58fba6aa7660c6
       url: "https://pub.dev"
     source: hosted
-    version: "0.11.0"
+    version: "0.11.2"
   source_gen:
     dependency: transitive
     description:
