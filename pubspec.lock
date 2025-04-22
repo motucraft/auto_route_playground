@@ -480,12 +480,11 @@ packages:
   smooth_sheets:
     dependency: "direct main"
     description:
-      path: "."
-      ref: main
-      resolved-ref: "2e81a0a8b87a3cc659114841194841b7cc6bacf2"
-      url: "https://github.com/fujidaiti/smooth_sheets"
-    source: git
-    version: "0.11.2"
+      name: smooth_sheets
+      sha256: "29b110df329ea48cce6e79cf25d0688fa447d11d24add52e7b8d4563daa64b7d"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.11.3"
   source_gen:
     dependency: transitive
     description:
