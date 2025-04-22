@@ -46,22 +46,6 @@ class HomeRoute extends _i2.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i1.NormalScreen]
-class NormalRoute extends _i2.PageRouteInfo<void> {
-  const NormalRoute({List<_i2.PageRouteInfo>? children})
-    : super(NormalRoute.name, initialChildren: children);
-
-  static const String name = 'NormalRoute';
-
-  static _i2.PageInfo page = _i2.PageInfo(
-    name,
-    builder: (data) {
-      return const _i1.NormalScreen();
-    },
-  );
-}
-
-/// generated route for
 /// [_i1.SecondSheetScreen]
 class SecondSheetRoute extends _i2.PageRouteInfo<void> {
   const SecondSheetRoute({List<_i2.PageRouteInfo>? children})

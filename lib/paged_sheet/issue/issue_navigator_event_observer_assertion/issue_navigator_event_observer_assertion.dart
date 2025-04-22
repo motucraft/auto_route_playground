@@ -40,7 +40,6 @@ class AppRouter extends RootStackRouter {
         ),
       ],
     ),
-    AutoRoute(page: NormalRoute.page),
   ];
 
   Route<T> _pagedSheetRouteBuilder<T>(
@@ -164,19 +163,6 @@ class SecondSheetScreen extends StatelessWidget {
           }),
         ),
       ),
-    );
-  }
-}
-
-@RoutePage()
-class NormalScreen extends StatelessWidget {
-  const NormalScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text('Normal Screen')),
-      body: Center(child: Text('This is a normal page, not a sheet.')),
     );
   }
 }
