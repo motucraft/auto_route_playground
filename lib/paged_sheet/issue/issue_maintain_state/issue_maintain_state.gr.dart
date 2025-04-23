@@ -19,7 +19,7 @@ import 'package:flutter/material.dart' as _i3;
 class FirstSheetRoute extends _i2.PageRouteInfo<FirstSheetRouteArgs> {
   FirstSheetRoute({
     _i3.Key? key,
-    int? value = 0,
+    DateTime? value,
     List<_i2.PageRouteInfo>? children,
   }) : super(
          FirstSheetRoute.name,
@@ -41,11 +41,11 @@ class FirstSheetRoute extends _i2.PageRouteInfo<FirstSheetRouteArgs> {
 }
 
 class FirstSheetRouteArgs {
-  const FirstSheetRouteArgs({this.key, this.value = 0});
+  const FirstSheetRouteArgs({this.key, this.value});
 
   final _i3.Key? key;
 
-  final int? value;
+  final DateTime? value;
 
   @override
   String toString() {
@@ -67,4 +67,43 @@ class HomeRoute extends _i2.PageRouteInfo<void> {
       return const _i1.HomeScreen();
     },
   );
+}
+
+/// generated route for
+/// [_i1.NormalScreen]
+class NormalRoute extends _i2.PageRouteInfo<NormalRouteArgs> {
+  NormalRoute({
+    _i3.Key? key,
+    DateTime? value,
+    List<_i2.PageRouteInfo>? children,
+  }) : super(
+         NormalRoute.name,
+         args: NormalRouteArgs(key: key, value: value),
+         initialChildren: children,
+       );
+
+  static const String name = 'NormalRoute';
+
+  static _i2.PageInfo page = _i2.PageInfo(
+    name,
+    builder: (data) {
+      final args = data.argsAs<NormalRouteArgs>(
+        orElse: () => const NormalRouteArgs(),
+      );
+      return _i1.NormalScreen(key: args.key, value: args.value);
+    },
+  );
+}
+
+class NormalRouteArgs {
+  const NormalRouteArgs({this.key, this.value});
+
+  final _i3.Key? key;
+
+  final DateTime? value;
+
+  @override
+  String toString() {
+    return 'NormalRouteArgs{key: $key, value: $value}';
+  }
 }

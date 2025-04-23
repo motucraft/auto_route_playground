@@ -1,7 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:auto_route_playground/paged_sheet/issue/issue_maintain_state/issue_maintain_state.gr.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:smooth_sheets/smooth_sheets.dart';
 
 void main() => runApp(const MyApp());
@@ -25,6 +24,7 @@ class AppRouter extends RootStackRouter {
     AutoRoute(
       path: '/',
       page: HomeRoute.page,
+      maintainState: false,
       children: [
         CustomRoute(
           initial: true,
@@ -42,17 +42,16 @@ class AppRouter extends RootStackRouter {
         ),
       ],
     ),
+    AutoRoute(maintainState: false, page: NormalRoute.page),
   ];
 }
 
 @RoutePage()
-class HomeScreen extends HookWidget {
+class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final counter = useRef(0);
-
     return Stack(
       children: [
         Scaffold(
@@ -62,35 +61,37 @@ class HomeScreen extends HookWidget {
               children: [
                 ElevatedButton(
                   onPressed: () {
-                    counter.value++;
-                    debugPrint('navigate value=${counter.value}');
-                    context.router.navigate(
-                      FirstSheetRoute(value: counter.value),
-                    );
+                    context.router.navigate(FirstSheetRoute(value: _now()));
                   },
-                  child: Text('countup with navigate'),
+                  child: Text('navigate to FirstSheetRoute'),
                 ),
                 const SizedBox(height: 8),
                 ElevatedButton(
                   onPressed: () {
-                    counter.value++;
-                    debugPrint('replace value=${counter.value}');
-                    context.router.replace(
-                      FirstSheetRoute(value: counter.value),
-                    );
+                    context.router.replace(FirstSheetRoute(value: _now()));
                   },
-                  child: Text('countup with replace'),
+                  child: Text('replace to FirstSheetRoute'),
                 ),
                 const SizedBox(height: 8),
                 ElevatedButton(
                   onPressed: () {
-                    counter.value++;
-                    debugPrint('popAndPush value=${counter.value}');
-                    context.router.popAndPush(
-                      FirstSheetRoute(value: counter.value),
-                    );
+                    context.router.popAndPush(FirstSheetRoute(value: _now()));
                   },
-                  child: Text('countup with popAndPush'),
+                  child: Text('popAndPush to FirstSheetRoute'),
+                ),
+                Divider(height: 36),
+                ElevatedButton(
+                  onPressed: () {
+                    context.router.navigate(NormalRoute(value: _now()));
+                  },
+                  child: Text('navigate to NormalRoute'),
+                ),
+                const SizedBox(height: 8),
+                ElevatedButton(
+                  onPressed: () {
+                    context.router.replace(NormalRoute(value: _now()));
+                  },
+                  child: Text('replace to NormalRoute'),
                 ),
               ],
             ),
@@ -99,6 +100,12 @@ class HomeScreen extends HookWidget {
         SheetViewport(child: PagedSheetNavigator()),
       ],
     );
+  }
+
+  DateTime _now() {
+    final now = DateTime.now();
+    debugPrint('now=${now.toIso8601String()}');
+    return now;
   }
 }
 
@@ -119,18 +126,41 @@ class PagedSheetNavigator extends StatelessWidget {
 
 @RoutePage()
 class FirstSheetScreen extends StatelessWidget {
-  const FirstSheetScreen({super.key, this.value = 0});
+  const FirstSheetScreen({super.key, this.value});
 
-  final int? value;
+  final DateTime? value;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: 300,
+      height: 200,
       color: Colors.blue.shade200,
       child: Center(
-        child: Text(value.toString(), style: TextStyle(fontSize: 36)),
+        child: Text(
+          (value ?? DateTime.now()).toIso8601String(),
+          style: TextStyle(fontSize: 22),
+        ),
+      ),
+    );
+  }
+}
+
+@RoutePage()
+class NormalScreen extends StatelessWidget {
+  const NormalScreen({super.key, this.value});
+
+  final DateTime? value;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(),
+      body: Center(
+        child: Text(
+          value?.toIso8601String() ?? '',
+          style: TextStyle(fontSize: 22),
+        ),
       ),
     );
   }
