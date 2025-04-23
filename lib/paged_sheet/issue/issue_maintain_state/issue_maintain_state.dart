@@ -138,7 +138,7 @@ class FirstSheetScreen extends StatelessWidget {
       color: Colors.blue.shade200,
       child: Center(
         child: Text(
-          (value ?? DateTime.now()).toIso8601String(),
+          value?.toIso8601String() ?? '',
           style: TextStyle(fontSize: 22),
         ),
       ),
